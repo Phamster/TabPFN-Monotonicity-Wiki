@@ -1,0 +1,32 @@
+# Obsidian workspace files (local settings, not content)
+**/.obsidian/workspace
+**/.obsidian/workspace.json
+**/.obsidian/workspaces.json
+**/.obsidian/cache
+
+# Obsidian canvas backup / base files
+*.base
+
+# LaTeX build artifacts (for future thesis/ directory)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+_minted-*/
+build/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
