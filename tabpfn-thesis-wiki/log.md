@@ -134,4 +134,7 @@ NEW, secondary. See [[papers/tfm-self-consistency-2026]].
 ## [2026-11-11] update | Causal pre-training fairness study
 Filled in authors and venue (WWW '26) and the main finding in [[papers/causal-pretraining-fairness-2026]].
 
+## [2026-11-24] update | Candidate Strategy 6: post-hoc rearrangement
+Added to [[monotonicity-enforcement-mechanisms]]: sort/isotonic-repair each borrower's TabPFN PD curve along the constrained features. Idea only, for the supervisor; citations still to verify.
+
 *Next gap-watch: early December 2026. Re-check arXiv:2605.18147 section 6.2 (future work) in the PDF, and look for the Shapley-PoM manuscript.*

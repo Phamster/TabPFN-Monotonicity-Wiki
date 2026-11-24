@@ -33,6 +33,31 @@ FairPFN ([[fairpfn-2024-2025]]) proves the mechanism works for *fairness*: bias 
 ### 5. Distillation into a monotone-constrained GBM (new 2026-11-11, idea only)
 [[pocket-foundation-models-distillation-2026]] shows a TFM can be distilled into an XGBoost or CatBoost student that keeps most of the teacher's AUC, provided the teacher labels its training rows out-of-fold (otherwise the in-context learner leaks labels). Nobody has combined this with constraints. The monotonicity version: train the XGBoost student with `monotone_constraints` on TabPFN-3's out-of-fold soft predictions. The student is monotone by construction, exactly like Koklev's GBMs, so its PoM is directly comparable. Caveat: the discrete-choice audit reports that distilling a TFM into a constrained structural student keeps the economics but loses accuracy, so a trade-off is likely. Cheap to try with the existing XGBoost code.
 
+### 6. Post-hoc rearrangement of TabPFN's PD curves (candidate, 2026-11-24, idea only, for the supervisor)
+Repairs the predictions instead of the model. For a borrower x and a constrained feature j, evaluate
+full TabPFN (all features in the context, nothing removed) on a grid of x_j values with the other features
+fixed: that is exactly the ICE curve the violation diagnostics already compute. Then make the curve
+monotone in the required direction, either by **sorting** its values (rearrangement, Chernozhukov,
+Fernández-Val & Galichon, *Biometrika* 2009 — verify the citation before use) or by an isotonic fit.
+The borrower's own PD is read off the repaired curve at their actual x_j. Rearrangement is known to never
+increase the estimation error of a function whose true shape is monotone (their main result — verify).
+
+Why it is interesting here: it keeps TabPFN's nonlinearity *and* lets TabPFN see the constrained features,
+which is exactly what the adapter (Strategy 1) gives up and where its structural cost comes from (GMSC:
+20% AUC PoM, all structural). Price: about 20 TabPFN predictions per borrower per constrained feature
+(cheap with the batch-independent row cache: no refit, only more test rows).
+
+Open problems, why it is not a full guarantee yet:
+- **one feature at a time**: repairing along x_j can re-break monotonicity along x_k; several constrained
+  features need a joint repair (rearrange on a multi-dimensional grid, or repair coordinate by coordinate
+  and check), which grows quickly with the number of constraints (Polish: 41);
+- **between grid points** the PD has to be interpolated (monotone interpolation keeps the guarantee);
+- **no closed-form model**: every new borrower needs its own grid of TabPFN calls; the "model" is TabPFN
+  + a repair rule, which may be harder to defend as an IRB model than a monotone GBM.
+Related: the "dominance" alternative (Lipschitz monotone networks, Nolte, Kitouni & Williams, ICLR 2023 —
+verify) adds λ·x_j with λ above the network's steepest wrong-way slope; TabPFN has no known bound on that
+slope, so it gives no guarantee here, which is why it is not listed as its own strategy.
+
 ## Comparison table
 
 | Strategy | Touches the TFM? | Evidence it works (any constraint type) | Evidence for monotonicity specifically | Effort to implement |
@@ -42,6 +67,7 @@ FairPFN ([[fairpfn-2024-2025]]) proves the mechanism works for *fairness*: bias 
 | 3. Context engineering | No | Yes — [[kenfack-fair-icl-2025]] (fairness) | No | Low |
 | 4. Output-head constraint | Yes, modifies architecture | Yes — MonoNet (general NNs, not TFMs) | No | Medium-High |
 | 5. Distillation into constrained GBM | No (TFM only labels data) | Distillation works — [[pocket-foundation-models-distillation-2026]] | No (monotone by construction, cost untested) | Low |
+| 6. Post-hoc rearrangement | No (repairs TabPFN's outputs) | Rearrangement theory for monotone estimands (Chernozhukov et al.) | No (untested for TFMs) | Low-Medium (multi-feature repair open) |
 
 Strategy 5 is also cheap and does not touch the TFM, so it could join 1 and 3 if time allows. The two original "no TFM modification" strategies (1 and 3) are both the cheapest to test *and* the ones with a path to directly reusing [[price-of-monotonicity-credit-pd-2026]]'s Price-of-Monotonicity metric for an apples-to-apples comparison against the GBM baseline — making them the natural starting point for a thesis, with strategies 2 and 4 as a "if time permits" extension or future-work discussion.
 
