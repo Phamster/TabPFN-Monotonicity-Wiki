@@ -38,9 +38,11 @@ Repairs the predictions instead of the model. For a borrower x and a constrained
 full TabPFN (all features in the context, nothing removed) on a grid of x_j values with the other features
 fixed: that is exactly the ICE curve the violation diagnostics already compute. Then make the curve
 monotone in the required direction, either by **sorting** its values (rearrangement, Chernozhukov,
-Fernández-Val & Galichon, *Biometrika* 2009 — verify the citation before use) or by an isotonic fit.
-The borrower's own PD is read off the repaired curve at their actual x_j. Rearrangement is known to never
-increase the estimation error of a function whose true shape is monotone (their main result — verify).
+Fernández-Val & Galichon 2009, "Improving point and interval estimates of monotone functions by
+rearrangement", *Biometrika* 96(3), 559–575, doi:10.1093/biomet/asp030, arXiv:0806.4730; checked
+2026-11-25 via RePEc/arXiv) or by an isotonic fit. The borrower's own PD is read off the repaired curve at
+their actual x_j. Their main result: if the target function is monotone, the rearranged estimate is always
+at least as close to it in common (Lp) metrics as the original estimate, univariate and multivariate.
 
 Why it is interesting here: it keeps TabPFN's nonlinearity *and* lets TabPFN see the constrained features,
 which is exactly what the adapter (Strategy 1) gives up and where its structural cost comes from (GMSC:
@@ -54,8 +56,8 @@ Open problems, why it is not a full guarantee yet:
 - **between grid points** the PD has to be interpolated (monotone interpolation keeps the guarantee);
 - **no closed-form model**: every new borrower needs its own grid of TabPFN calls; the "model" is TabPFN
   + a repair rule, which may be harder to defend as an IRB model than a monotone GBM.
-Related: the "dominance" alternative (Lipschitz monotone networks, Nolte, Kitouni & Williams, ICLR 2023 —
-verify) adds λ·x_j with λ above the network's steepest wrong-way slope; TabPFN has no known bound on that
+Related: the "dominance" alternative (Lipschitz monotone networks, Nolte, Kitouni & Williams 2023,
+"Expressive Monotonic Neural Networks", ICLR 2023, arXiv:2307.07512; checked 2026-11-25) adds λ·x_j with λ above the network's steepest wrong-way slope; TabPFN has no known bound on that
 slope, so it gives no guarantee here, which is why it is not listed as its own strategy.
 
 ## Comparison table
