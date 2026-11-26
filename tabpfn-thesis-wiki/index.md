@@ -23,6 +23,7 @@ Read this first. Organized by category; each entry links to its page with a one-
 
 ## Papers — Tabular Foundation Models (core architecture)
 - [[pfn-bayesian-inference-2022]] — **(new 2026-11-26)** the PFN method paper (ICLR 2022); loss = expected KL to the PPD + const
+- [[nagler-pfn-statistical-foundations-2023]] — **(new 2026-11-26)** PFN theory: pre-tuned untrained predictor; bias vanishes only if localised
 - [[tabpfn-2023]] — the original proof of concept (ICLR 2023)
 - [[tabpfn-v2-2025]] — Nature paper, 10K samples, German Credit Dataset showcase
 - [[tabpfn-2.5-2025]] — 100% win rate vs. XGBoost on small/medium data, distillation
@@ -56,6 +57,9 @@ Read this first. Organized by category; each entry links to its page with a one-
 - [[monotone-recurrent-governed-credit-2026]] — **(new 2026-11)** "price of the frame": cost of governance restrictions in credit scoring (no TFMs)
 - [[domain-constrained-stacking-2025]] — WoE-based monotonicity in a stacking ensemble; conceptual predecessor to Strategy 1
 - [[talking-trees-2026]] — secondary citation: TFMs lack constraint mechanisms generally
+
+- [[dumitrescu-pltr-2022]] — **(new 2026-11-26)** PLTR: LR + tree-rule effects; closest classical relative of the adapter
+- [[rudin-interpretable-2019]] — **(new 2026-11-26)** interpretable by design instead of post-hoc explanation
 
 ## Papers — Credit Risk × TFM
 - [[foundation-models-credit-risk-2026]] — **closest competitor, co-authored by Lessmann**: 9 TFMs × 14 PD datasets, TabPFN-3 best, underpredicts PD; no monotonicity (corrected 2026-11-11)

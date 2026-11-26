@@ -7,6 +7,7 @@ The bibliography of record. Every paper below is referenced in at least one `pap
 | Paper | Authors | Year | Venue | Link |
 |---|---|---|---|---|
 | Transformers Can Do Bayesian Inference (PFN paper) *(added 2026-11-26)* | Müller, Hollmann, Pineda Arango, Grabocka, Hutter | 2022 | ICLR | arXiv:2112.10510 |
+| Statistical Foundations of Prior-Data Fitted Networks *(added 2026-11-26)* | Nagler | 2023 | ICML (PMLR 202) | arXiv:2305.11097 |
 | TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second | Hollmann, Müller, Eggensperger, Hutter | 2023 | ICLR | arXiv:2207.01848 |
 | Accurate predictions on small data with a tabular foundation model (TabPFN v2) | Hollmann, Müller, Purucker, Krishnakumar, Körfer, Hoo, Schirrmeister, Hutter | 2025 | Nature | nature.com/articles/s41586-024-08328-6 |
 | TabPFN-2.5: Advancing the State of the Art in Tabular Foundation Models | Grinsztajn, Flöge, Key, Birkel, et al. (Prior Labs) | 2025 | arXiv | arXiv:2511.08667 |
@@ -81,6 +82,8 @@ The bibliography of record. Every paper below is referenced in at least one `pap
 |---|---|---|---|---|
 | Benchmarking state-of-the-art classification algorithms for credit scoring | Lessmann, Baesens, Seow, Thomas | 2015 | European Journal of Operational Research | — |
 | Fairness in credit scoring: Assessment, implementation and profit implications | Kozodoi, Jacob, Lessmann | 2022 | European Journal of Operational Research | — |
+| Machine learning for credit scoring: Improving logistic regression with non-linear decision-tree effects (PLTR) *(added 2026-11-26)* | Dumitrescu, Hué, Hurlin, Tokpavi | 2022 | European Journal of Operational Research 297(3) | doi:10.1016/j.ejor.2021.06.053 |
+| Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead *(added 2026-11-26)* | Rudin | 2019 | Nature Machine Intelligence 1(5) | doi:10.1038/s42256-019-0048-x |
 | Explainable AI for Operational Research | De Bock, Coussement, De Caigny, Lessmann et al. | 2024 | European Journal of Operational Research | — |
 
 *Note: author lists marked "per arXiv" are abbreviated from search snippets — verify full author lists against the primary source when citing.*

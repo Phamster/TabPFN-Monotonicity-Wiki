@@ -140,4 +140,7 @@ Added to [[monotonicity-enforcement-mechanisms]]: sort/isotonic-repair each borr
 ## [2026-11-26] ingest | PFN paper (arXiv:2112.10510)
 NEW, foundational. See [[papers/pfn-bayesian-inference-2022]]. Checked on arXiv; Corollary 1.1 (loss = expected KL to the PPD + const) is the result the thesis uses.
 
+## [2026-11-26] ingest | Nagler 2023, Dumitrescu et al. 2022, Rudin 2019
+NEW. See [[papers/nagler-pfn-statistical-foundations-2023]], [[papers/dumitrescu-pltr-2022]], [[papers/rudin-interpretable-2019]]. Checked via PMLR/Crossref/arXiv. 30 further foundation references (XGBoost, ICE/PDP, Brier/Murphy, bootstrap, Lessmann 2015, ...) went into the thesis bib only; notes in `../research_notes/Foundation papers check/papers.md`.
+
 *Next gap-watch: early December 2026. Re-check arXiv:2605.18147 section 6.2 (future work) in the PDF, and look for the Shapley-PoM manuscript.*
