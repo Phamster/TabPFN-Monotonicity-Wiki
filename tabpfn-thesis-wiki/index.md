@@ -22,6 +22,7 @@ Read this first. Organized by category; each entry links to its page with a one-
 - [[regulatory-requirements-irb]] — CRR/EBA/ECB language including monotonicity sub-criteria from Chen & Ye 2023
 
 ## Papers — Tabular Foundation Models (core architecture)
+- [[pfn-bayesian-inference-2022]] — **(new 2026-11-26)** the PFN method paper (ICLR 2022); loss = expected KL to the PPD + const
 - [[tabpfn-2023]] — the original proof of concept (ICLR 2023)
 - [[tabpfn-v2-2025]] — Nature paper, 10K samples, German Credit Dataset showcase
 - [[tabpfn-2.5-2025]] — 100% win rate vs. XGBoost on small/medium data, distillation

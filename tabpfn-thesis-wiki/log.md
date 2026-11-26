@@ -137,4 +137,7 @@ Filled in authors and venue (WWW '26) and the main finding in [[papers/causal-pr
 ## [2026-11-24] update | Candidate Strategy 6: post-hoc rearrangement
 Added to [[monotonicity-enforcement-mechanisms]]: sort/isotonic-repair each borrower's TabPFN PD curve along the constrained features. Idea only, for the supervisor; both citations checked 2026-11-25 (RePEc/arXiv, ICLR site).
 
+## [2026-11-26] ingest | PFN paper (arXiv:2112.10510)
+NEW, foundational. See [[papers/pfn-bayesian-inference-2022]]. Checked on arXiv; Corollary 1.1 (loss = expected KL to the PPD + const) is the result the thesis uses.
+
 *Next gap-watch: early December 2026. Re-check arXiv:2605.18147 section 6.2 (future work) in the PDF, and look for the Shapley-PoM manuscript.*

@@ -6,6 +6,7 @@ The bibliography of record. Every paper below is referenced in at least one `pap
 
 | Paper | Authors | Year | Venue | Link |
 |---|---|---|---|---|
+| Transformers Can Do Bayesian Inference (PFN paper) *(added 2026-11-26)* | Müller, Hollmann, Pineda Arango, Grabocka, Hutter | 2022 | ICLR | arXiv:2112.10510 |
 | TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second | Hollmann, Müller, Eggensperger, Hutter | 2023 | ICLR | arXiv:2207.01848 |
 | Accurate predictions on small data with a tabular foundation model (TabPFN v2) | Hollmann, Müller, Purucker, Krishnakumar, Körfer, Hoo, Schirrmeister, Hutter | 2025 | Nature | nature.com/articles/s41586-024-08328-6 |
 | TabPFN-2.5: Advancing the State of the Art in Tabular Foundation Models | Grinsztajn, Flöge, Key, Birkel, et al. (Prior Labs) | 2025 | arXiv | arXiv:2511.08667 |

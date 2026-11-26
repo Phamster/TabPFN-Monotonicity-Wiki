@@ -20,4 +20,4 @@ Because a PFN never sees real-world data during training, its entire inductive b
 - How much of TabPFN's behavior on credit data is actually attributable to prior design choices vs. the in-context examples themselves? (Relevant to disentangling [[resampling-credit-risk-tfm-2026]]'s finding that context strategy dominates TFM choice.)
 
 ## See also
-[[in-context-learning-tabular]], [[tabular-foundation-models-landscape]], [[fairpfn-2024-2025]]
+[[pfn-bayesian-inference-2022]] (the method paper), [[in-context-learning-tabular]], [[tabular-foundation-models-landscape]], [[fairpfn-2024-2025]]
